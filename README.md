@@ -20,7 +20,7 @@ Welcome to the world of Capacitive Depth Sensors! This repository is your hub fo
 
 This guide provides step-by-step instructions on constructing a Capacitive Depth Sensor using simple materials.
 
-The beauty of a capacitive sensor lies in its simplicity—no moving parts or additional electronics, except for the Pico microcontroller integrated with the sensor. We're just tapping into a fundamental physical characteristic of a metal rod.
+The beauty of a capacitive sensor lies in its simplicity—no moving parts or additional electronics, except for the Pico microcontroller reading the sensor. We're just tapping into a fundamental physical characteristic of a metal rod.
 
 The physical charactersitic we will be measuring is Capacitance. Capacitance is the ability of a component or circuit to collect and store energy in the form of an electrical charge. A capacitor works like a temporary storage tank for electrical energy. It consists of two conductive plates separated by an insulating material called a dielectric.
 
