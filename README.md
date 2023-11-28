@@ -195,7 +195,7 @@ Locate a suitable container to submerge your depth sensor. Capture sensor readin
 
 Calibrate the sensor based on your data. Results will vary based on the specific parameters of the sensor(length, materials, etc.). The details of my calibration are included in the attached jupyter notebook
 
-[capacative_sensor_calibration](capacative_sensor_calibration.ipynb)
+[capacative_sensor_calibration](capacitive_sensor_calibration.ipynb)
 
 ### Calibration Points
 
