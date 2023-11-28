@@ -22,26 +22,23 @@ def measure_mean_cycle_time(cycles):
     - The mean cycle time.
     """
     charge_discharge_times = []
-    for _ in range(cycles):    
-        charge_start_time = utime.ticks_us() # Begin charge timer
+    while len(charge_discharge_times) < cycles:
         charging_pin.value(1)
-        charge_start_time = utime.ticks_us()
-        if adc.read_u16() >= 65535 * .9:   # below 90% of ADC range (0-65535)
-            charge_time = utime.ticks_diff(utime.ticks_us(), charge_start_time) # Calculate charge time
+        charge_start_time = utime.ticks_us()        # Begin charge timer
+        if adc.read_u16() >= 65535 * .9:            # below 90% of ADC range (0-65535)
+            charge_time = utime.ticks_diff(utime.ticks_us(), charge_start_time)
             charging_pin.value(0)
             discharge_start_time = utime.ticks_us() # Begin discharge timer
-            while adc.read_u16() >= 65535 * .1: # above 10% of ADC range (0-65535)
+            while adc.read_u16() >= 65535 * .1:
                 pass
             discharge_time = utime.ticks_diff(utime.ticks_us(), discharge_start_time) # Calculate discharge time
-            cycle_time = charge_time + discharge_time
+            charge_discharge_times.append(charge_time + discharge_time)
             
-            # Gather SAMPLE_SIZE data points
-            charge_discharge_times.append(cycle_time)
     if charge_discharge_times:  # Make sure list is not empty to avoid division by zero
         charge_discharge_mean = sum(charge_discharge_times) / len(charge_discharge_times)
         return charge_discharge_mean
     else:
-        return 0  
+        return 0
     
 
 def calculate_depth(cycle_time):
