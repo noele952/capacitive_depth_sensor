@@ -1,8 +1,8 @@
 # Capacitive Depth Sensor Construction Guide
 
-<div style="text-align: center;">
+<p align="center">
   <img src="https://hydropi.s3.us-east-2.amazonaws.com/github/capacative_sensor/cap_sensor_complete.jpg" alt="Capacitive Depth Sensor" width="400" style="display: block; margin: 20 auto;">
-</div>
+</p>
 
 Welcome to the world of Capacitive Depth Sensors! This repository is your hub for building the hardware and coding the brains behind a reliable depth sensor using a Pico microcontroller and MicroPython.
 
