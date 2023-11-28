@@ -33,10 +33,10 @@ def measure_mean_cycle_time(cycles):
             while adc.read_u16() >= 65535 * .1: # above 10% of ADC range (0-65535)
                 pass
             discharge_time = utime.ticks_diff(utime.ticks_us(), discharge_start_time) # Calculate discharge time
-            charge_time + discharge_time = charge_time + discharge_time
+            cycle_time = charge_time + discharge_time
             
             # Gather SAMPLE_SIZE data points
-            charge_discharge_times.append(charge_time + discharge_time)
+            charge_discharge_times.append(cycle_time)
     if charge_discharge_times:  # Make sure list is not empty to avoid division by zero
         charge_discharge_mean = sum(charge_discharge_times) / len(charge_discharge_times)
         return charge_discharge_mean
