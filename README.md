@@ -191,9 +191,11 @@ charge_start_time = utime.ticks_us()
 
 ### Calibration Procedures
 
-Locate a suitable container to submerge your depth sensor. Capture sensor readings at evenly spaced depth intervals.
+Locate a suitable container to submerge your depth sensor. Capture sensor readings at evenly spaced depth intervals. Calibrate the sensor based on your data.
 
-Calibrate the sensor based on your data. Results will vary based on the specific parameters of the sensor(length, materials, etc.). The details of my calibration are included in the attached jupyter notebook
+The results will vary based on the specific parameters of the sensor(length, materials, etc.).
+
+The details of my calibration are included in the attached Jupyter notebook
 
 [capacitive_sensor_calibration](capacitive_sensor_calibration.ipynb)
 
