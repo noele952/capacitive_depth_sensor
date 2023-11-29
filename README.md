@@ -191,7 +191,9 @@ charge_start_time = utime.ticks_us()
 
 ### Calibration Procedures
 
-Locate a suitable container to submerge your depth sensor. Capture sensor readings at evenly spaced depth intervals. Calibrate the sensor based on your data.
+Locate a suitable container to submerge your depth sensor. You can capture your data at regularly spaced intervals. Since I'm calibrating this sensor to a specific container, so I decided to measure in terms of volume, adding fluid in 20 oz increments. This sensor is meant for a hydroponic garden, so this will allow me to not only estimate the fluid level in the garden, but the fluid consumption over time as wekk.
+
+Calibrate your sensor based on your data.
 
 The results will vary based on the specific parameters of the sensor(length, materials, etc.).
 
@@ -203,18 +205,22 @@ The details of my calibration are included in the attached Jupyter notebook
 
 | Time Constant (avg) | Known Fluid Level |
 | ------------------- | ----------------- |
-| 475 μs              | 0 cm              |
-| 562 μs              | 5 cm              |
-| 608 μs              | 10 cm             |
-| 688 μs              | 15 cm             |
-| 770 μs              | 20 cm             |
-| 872 μs              | 25cm              |
+| 458.11 μs           | 0 oz              |
+| 541.77 μs           | 20 oz             |
+| 764.53 μs           | 40 oz             |
+| 1330.73 μs          | 60 oz             |
+| 1332.13 μs          | 80 oz             |
+| 1495.62 μs          | 100 oz            |
+
+...
 
 ### Calibration Curve Equation
 
-The calibration curve is represented by the linear equation:
+The relationship for my sensors data is represented by the quadratic equations:
 
-#### _depth = (cycle_time - 470) / 15.37_
+#### cycle_time = -.011471388 _ depth\*\*2 + 9.90607429 _ depth + 506.578930
+
+#### depth = (-9.906074 + sqrt(9.906074\*\*2 - 4(-.0114713)(506.57893 - cycle_time))) / 0.022942
 
 ## License
 
